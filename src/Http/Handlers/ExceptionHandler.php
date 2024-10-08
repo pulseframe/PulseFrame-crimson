@@ -164,7 +164,7 @@ class ExceptionHandler
         $appName = Env::get('app.name');
 
         if (Env::get('app.settings.debug')) {
-          include(__DIR__ . "../../../Views/page.php");
+          include(__DIR__ . "../../../Views/Page.php");
         } else {
           echo View::render($page, [
             'status' => $statusCode,
