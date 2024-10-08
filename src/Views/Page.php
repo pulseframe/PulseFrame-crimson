@@ -3,7 +3,11 @@ require_once(ROOT_DIR . "/vendor/autoload.php");
 
 use PulseFrame\Crimson\StackTraceHandler;
 
-new StackTraceHandler($exception);
+$stackTraceHandler = new StackTraceHandler($exception);
+$fileContent = $stackTraceHandler->getFileContent();
+$stackTraces = $stackTraceHandler->getStackTraces();
+$fileToView = $stackTraceHandler->getFileToView();
+$highlightLines = $stackTraceHandler->getHighlightLines();
 ?>
 <!DOCTYPE html>
 <html lang="en">
