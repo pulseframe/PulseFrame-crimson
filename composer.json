@@ -1,0 +1,20 @@
+{
+  "name": "pulseframe/crimson",
+  "description": "PulseFrame's modern error handler.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+      "psr-4": {
+          "PulseFrame\\Crimson\\": "src/"
+      }
+  },
+  "authors": [
+      {
+          "name": "KingMaj0r"
+      }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "pulseframe/base": "^1.2"
+  }
+}
