@@ -21,12 +21,12 @@ new StackTraceHandler($exception);
       <p class="text-red-500">Error <?php echo $statusCode; ?></p>
     </h1>
 
-    <?php include 'navbar.php'; ?>
+    <?php include 'Navbar.php'; ?>
 
     <div class="flex h-screen">
-      <?php include 'sidebar.php'; ?>
+      <?php include 'Sidebar.php'; ?>
       <div class="w-3/4 pl-4 mb-44">
-        <?php include 'content_view.php'; ?>
+        <?php include 'ContentView.php'; ?>
       </div>
     </div>
   </div>

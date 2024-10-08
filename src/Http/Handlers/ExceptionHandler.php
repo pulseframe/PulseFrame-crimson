@@ -161,12 +161,15 @@ class ExceptionHandler
           $page = View::$errorPage;
         }
 
-        echo View::render($page, [
-          'status' => $statusCode,
-          'message' => $message,
-          'exception' => $exception,
-          'code' => $ErrorCode
-        ]);
+        if (Env::get('app.settings.debug')) {
+          include(__DIR__ . "../Views/page.php");
+        } else {
+          echo View::render($page, [
+            'status' => $statusCode,
+            'message' => $message,
+            'code' => $ErrorCode
+          ]);
+        }
       } else {
         $message = Config::get('app', 'stage') === "development" ? $exception->getMessage() : Translation::key('errors.error-0');
         echo Response::JSON('error', $message, self::$ErrorCode);
