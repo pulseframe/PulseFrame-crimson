@@ -1,7 +1,12 @@
 <?php if ($fileContent): ?>
-  <div class="bg-gray-800 shadow rounded-lg p-4 h-full overflow-hidden pb-12">
-    <h2 class="text-xl font-semibold pb-2.5"><?php echo htmlspecialchars(basename($fileToView)); ?></h2>
-    <pre class="bg-gray-900 p-2 rounded-lg overflow-auto h-full" style="line-height: 1.2;"><?php include(__DIR__ . "/FileContent.php") ?></pre>
+  <?php
+  $relativeFilePath = str_replace(realpath(ROOT_DIR) . '/', '', realpath($fileToView));
+  $lineNumber = !empty($highlightLines) ? $highlightLines[0] : '';
+  $displayName = $lineNumber ? "{$relativeFilePath}:{$lineNumber}" : $relativeFilePath;
+  ?>
+  <div class="bg-gray-800 shadow rounded-lg p-4 pb-10 h-full overflow-hidden relative">
+    <h2 class="w-max ml-auto pr-2 text-gray-400"><?php echo htmlspecialchars($displayName); ?></h2>
+    <pre class="p-2 pt-0 rounded-b-lg overflow-hidden h-full" style="line-height: 1.2;"><?php include(__DIR__ . "/FileContent.php") ?></pre>
   </div>
 <?php elseif (isset($fileToView)): ?>
   <div class="mt-4 bg-gray-800 shadow rounded-lg p-4 text-red-500">

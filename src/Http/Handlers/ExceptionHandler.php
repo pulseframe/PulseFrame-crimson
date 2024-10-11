@@ -10,6 +10,7 @@ use PulseFrame\Facades\Response;
 use PulseFrame\Facades\Translation;
 use PulseFrame\Crimson\Exceptions\NotFoundException;
 use PulseFrame\Crimson\Exceptions\MethodNotAllowedException;
+use PulseFrame\Crimson\Exceptions\AccessForbiddenException;
 use PulseFrame\Crimson\Exceptions\CrimsonFault;
 
 /**
@@ -85,7 +86,9 @@ class ExceptionHandler
       if ($e instanceof NotFoundException) {
         return self::renderErrorView(404, 'The page you are looking for could not be found.');
       } elseif ($e instanceof MethodNotAllowedException) {
-        return self::renderErrorView(403, 'The method you are using is not supported.');
+        return self::renderErrorView(405, 'The method you are using is not supported.');
+      } elseif ($e instanceof AccessForbiddenException) {
+        return self::renderErrorView(403, 'Access forbidden.');
       } else {
         return self::renderErrorView(500, $e->getMessage(), $e);
       }
@@ -163,7 +166,7 @@ class ExceptionHandler
 
         $appName = Env::get('app.name');
 
-        if (Env::get('app.settings.debug')) {
+        if (Env::get('app.settings.debug') && $exception) {
           include(__DIR__ . "../../../Views/Page.php");
         } else {
           echo View::render($page, [

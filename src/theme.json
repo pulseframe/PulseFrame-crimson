@@ -1,0 +1,33 @@
+{
+  "keywords": {
+    "colorClass": "text-blue-600"
+  },
+  "strings": {
+    "colorClass": "text-yellow-600"
+  },
+  "numbers": {
+    "integer": "text-orange-500",
+    "float": "text-orange-500"
+  },
+  "operators": {
+    "colorClass": "text-gray-400"
+  },
+  "constants": {
+    "true": "text-blue-400",
+    "false": "text-blue-400",
+    "null": "text-blue-400"
+  },
+  "regex": {
+    "variables": "text-indigo-400",
+    "functions": "text-pink-400",
+    "classes": "text-purple-400",
+    "namespace": "text-green-500",
+    "attributes": "text-red-500"
+  },
+  "comments": {
+    "colorClass": "text-gray-600"
+  },
+  "annotations": {
+    "colorClass": "text-teal-400"
+  }
+}
