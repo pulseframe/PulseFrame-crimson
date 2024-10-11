@@ -1,4 +1,4 @@
-# ![Crimson by PulseFrame](./Assets/logo.png)
+# ![Crimson by PulseFrame](./src/Assets/logo.png)
 
 ## Crimson
 
