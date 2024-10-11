@@ -1,10 +1,10 @@
-# ![Crimson by PulseFrame](./src/Assets/logo.png)
-
-## Crimson
-
-Crimson is a powerful tool designed to offer developers a highly flexible and modern development experience. Built with simplicity and performance in mind, Crimson integrates seamlessly with PulseFrame to deliver exceptional productivity for developers working on web applications.
+<div align="center">
+  <img src="./src/Assets/logo.png" alt="Crimson by PulseFrame" />
+</div>
 
 ---
+
+Crimson is a powerful tool designed to offer developers a highly flexible and modern development experience. Built with simplicity and performance in mind, Crimson integrates seamlessly with PulseFrame to deliver exceptional productivity for developers working on web applications.
 
 ### Features
 - **High Performance**: Built with speed and scalability.
