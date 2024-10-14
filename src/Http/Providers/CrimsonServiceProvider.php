@@ -13,6 +13,8 @@ class CrimsonServiceProvider implements ServiceProviderInterface
   {
     Config::set('view', "error_handler", [self::class, 'handleCrimsonErrors']);
 
+    set_exception_handler([ExceptionHandler::class, 'handle']);
+
     RouteHandler::setErrorHandler([ExceptionHandler::class, 'handle']);
   }
 

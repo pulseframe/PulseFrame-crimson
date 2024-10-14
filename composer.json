@@ -16,5 +16,10 @@
   "minimum-stability": "stable",
   "require": {
     "pulseframe/base": "^1.2"
+  },
+  "providers": {
+    "http": [
+      "PulseFrame\\Crimson\\Http\\Providers\\CrimsonServiceProvider"
+    ]
   }
 }

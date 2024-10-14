@@ -8,10 +8,10 @@ use PulseFrame\Facades\Log;
 use PulseFrame\Facades\Config;
 use PulseFrame\Facades\Response;
 use PulseFrame\Facades\Translation;
-use PulseFrame\Crimson\Exceptions\NotFoundException;
-use PulseFrame\Crimson\Exceptions\MethodNotAllowedException;
-use PulseFrame\Crimson\Exceptions\AccessForbiddenException;
-use PulseFrame\Crimson\Exceptions\CrimsonFault;
+use PulseFrame\Exceptions\NotFoundException;
+use PulseFrame\Exceptions\MethodNotAllowedException;
+use PulseFrame\Exceptions\AccessForbiddenException;
+use PulseFrame\Exceptions\CrimsonFault;
 
 /**
  * Class ExceptionHandler
@@ -90,7 +90,7 @@ class ExceptionHandler
       } elseif ($e instanceof AccessForbiddenException) {
         return self::renderErrorView(403, 'Access forbidden.');
       } else {
-        return self::renderErrorView(500, $e->getMessage(), $e);
+        return self::renderErrorView(500, "An internal server error occured.", $e);
       }
     } catch (\Throwable $innerException) {
       throw new CrimsonFault("Failed to handle exception: " . $innerException->getMessage(), 0, $innerException);
